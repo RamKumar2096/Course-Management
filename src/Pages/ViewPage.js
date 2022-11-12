@@ -29,7 +29,7 @@ const ViewPage = () => {
   }
 
   useEffect(() => {
-    api.get("courses/" +Date.id).then((res) =>{
+    api.get("courses/" +data.id).then((res) =>{
       setForm({title:res.data.title,description:res.data.description});
     })
   })

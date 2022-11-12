@@ -30,7 +30,7 @@ const AddPage = () => {
           <br />
           <form onSubmit={handleSubmit}>
             <div className="form-group">
-              <label>Course Name</label>
+              <label htmlFor="courseTitle">Course Name</label>
               <input type="text" onKeyDown={(e)=>{
                 setForm({...form,title:e.target.value});
               }} className="form-control" id="title" aria-describedby="emailHelp" placeholder="Course Name"/>
