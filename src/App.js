@@ -1,29 +1,31 @@
-import React from 'react';
-import {Routes, Route} from "react-router-dom";
-import LayoutPage from './Pages/LayoutPage';
-import HomePage from './Pages/HomePage';
-import ListPage from './Pages/ListPage';
-import AddPage from './Pages/AddPage';
-import ViewPage from './Pages/ViewPage';
-
-
-
-
-const App = () => {
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import LoginPage from "./Pages/LoginPage";
+import UsersList from "./Pages/UsersList";
+import HomePage from "./Pages/HomePage";
+function App() {
   return (
-    <div>
-     <Routes>
-      <Route path="/" element={<LayoutPage />}>
-        <Route path="/" element={<HomePage />}></Route>
-      <Route path="/home" element={<HomePage />}></Route>
-      <Route path="/list" element={<ListPage/>}></Route>
-      <Route path="/add" element={<AddPage />}></Route>
-      {/* id: */}
-      <Route path="/view/:id" element={<ViewPage />}></Route>
-      </Route>
-      </Routes>  
-    </div>
-  )
+    <>
+      <ToastContainer
+        position="top-center"
+        autoClose={2000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="/profile" element={<HomePage />} />
+        <Route path="/users" element={<UsersList />} />
+      </Routes>
+    </>
+  );
 }
 
 export default App;
